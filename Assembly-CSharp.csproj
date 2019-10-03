@@ -66,6 +66,7 @@
     <Compile Include="Assets\_Scripts\GameController.cs" />
     <Compile Include="Assets\_Scripts\HealthController.cs" />
     <Compile Include="Assets\_Scripts\PlanetController.cs" />
+    <Compile Include="Assets\_Scripts\PlayerController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/user01/Desktop/up/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
