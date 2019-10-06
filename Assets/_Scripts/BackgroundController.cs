@@ -37,7 +37,7 @@ public class BackgroundController : MonoBehaviour
     {
         transform.position = new Vector2(0.0f, resetPosition);
     }
-
+    // move blackground back to reset point
     void CheckBounds()
     {
         if (transform.position.y <= resetPoint)

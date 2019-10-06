@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
         Move();
         CheckBounds();
     }
+
+    /// <summary>
+    /// moves the player depending on what the player inputs
+    /// </summary>
     public void Move()
     {
         Vector2 newPosition = transform.position;
@@ -38,6 +42,9 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = newPosition;
     }
+    /// <summary>
+    /// Keeps the player on screen by not allowing the player to go too far to the left or right
+    /// </summary>
     public void CheckBounds()
     {
         if (transform.position.x > 8.16f)
@@ -50,7 +57,10 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(-8.1f, transform.position.y);
         }
     }
-
+    /// <summary>
+    /// does its thing if it touches the artwork in the game tagged "Planet" or "Health"
+    /// </summary>
+    /// <param name="collision"></param>
     void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -60,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 // Debug.Log("hit planet");
                 gameController.audioSources[0].Stop();
                 gameController.audioSources[2].Play();
-
+                gameController.Health -= 25;
 
 
                 break;
@@ -68,6 +78,7 @@ public class PlayerController : MonoBehaviour
                 // Debug.Log("hit health");
                 gameController.audioSources[0].Stop();
                 gameController.audioSources[1].Play();
+                gameController.Score += 1;
  
 
                 break;

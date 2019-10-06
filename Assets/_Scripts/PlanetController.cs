@@ -20,7 +20,7 @@ public class PlanetController : MonoBehaviour
         CheckBounds();
     }
     /// <summary>
-    /// Moves background down
+    /// Moves planet down
     /// </summary>
     void Move()
     {
@@ -31,14 +31,14 @@ public class PlanetController : MonoBehaviour
         transform.position = currentPosition;
     }
     /// <summary>
-    /// Moves background to reset position
+    /// Moves planet to reset position
     /// </summary>
     void Reset()
     {
         float randomXPosition = Random.Range(-5.96f, 5.99f);
         transform.position = new Vector2(randomXPosition, resetPosition);
     }
-
+    //move  planet back to reset point if it goes too far
     void CheckBounds()
     {
         if (transform.position.y <= resetPoint)

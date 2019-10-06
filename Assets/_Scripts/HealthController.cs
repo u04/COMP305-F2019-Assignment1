@@ -20,7 +20,7 @@ public class HealthController : MonoBehaviour
         CheckBounds();
     }
     /// <summary>
-    /// Moves background down
+    /// Moves health down
     /// </summary>
     void Move()
     {
@@ -31,14 +31,16 @@ public class HealthController : MonoBehaviour
         transform.position = currentPosition;
     }
     /// <summary>
-    /// Moves background to reset position
+    /// Moves health to reset position
     /// </summary>
     void Reset()
     {
         float randomXPosition = Random.Range(-8.42f, 8.36f);
         transform.position = new Vector2(randomXPosition, resetPosition);
     }
-
+    /// <summary>
+    /// health go back to reset point
+    /// </summary>
     void CheckBounds()
     {
         if (transform.position.y <= resetPoint)
